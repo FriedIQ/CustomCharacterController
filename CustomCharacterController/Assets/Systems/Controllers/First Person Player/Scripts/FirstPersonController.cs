@@ -89,7 +89,11 @@ public class FirstPersonController : MonoBehaviour
 
         // Determine if we are walking or jogging to determine current strafe speed.
         float strafeSpeed = walkOrJog ? _walkStrafeSpeed : _jogStrafeSpeed;
-        Vector3 desiredMove = transform.forward * _input.y * speed + transform.right * _input.x * strafeSpeed;
+        Vector3 desiredMove = transform.forward*_input.y*speed + transform.right*_input.x*strafeSpeed;
+        if (!Grounded)
+        {
+            desiredMove = transform.forward * rigidbody.velocity.y;
+        }
 
         // preserving current y velocity (for falling, gravity)
         float yvel = rigidbody.velocity.y;
@@ -152,7 +156,7 @@ public class FirstPersonController : MonoBehaviour
 
         // Add gravity
         Vector3 gravity = Physics.gravity;
-        rigidbody.AddForce(gravity * (advanced.gravityMultiplier - 1));
+        rigidbody.AddForce(gravity * rigidbody.mass * (advanced.gravityMultiplier - 1));
     }
 
     void OnDisable()
