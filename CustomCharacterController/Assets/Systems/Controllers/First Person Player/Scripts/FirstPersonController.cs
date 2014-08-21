@@ -25,6 +25,9 @@ public class FirstPersonController : MonoBehaviour
     [SerializeField]
     private bool _lockCursor = true;
 
+    private Vector3 _desiredMove;
+    private Vector3 _previousDesiredMove;
+
     [SerializeField]
     private AdvancedSettings advanced = new AdvancedSettings();     // The container for the advanced settings ( done this way so that the advanced setting are exposed under a foldout
     
@@ -89,10 +92,14 @@ public class FirstPersonController : MonoBehaviour
 
         // Determine if we are walking or jogging to determine current strafe speed.
         float strafeSpeed = walkOrJog ? _walkStrafeSpeed : _jogStrafeSpeed;
-        Vector3 desiredMove = transform.forward*_input.y*speed + transform.right*_input.x*strafeSpeed;
         if (!Grounded)
         {
-            desiredMove = transform.forward * rigidbody.velocity.y;
+            _desiredMove = _previousDesiredMove;
+        }
+        else
+        {
+            _previousDesiredMove = _desiredMove;
+            _desiredMove = transform.forward * _input.y * speed + transform.right * _input.x * strafeSpeed;
         }
 
         // preserving current y velocity (for falling, gravity)
@@ -106,10 +113,10 @@ public class FirstPersonController : MonoBehaviour
         }
 
         // Set the rigidbody's velocity according to the ground angle and desired move
-        rigidbody.velocity = desiredMove + Vector3.up * yvel;
+        rigidbody.velocity = _desiredMove + Vector3.up * yvel;
 
         // Use low/high friction depending on whether we're moving or not
-        if (desiredMove.magnitude > 0 || !Grounded)
+        if (_desiredMove.magnitude > 0 || !Grounded)
         {
             collider.material = advanced.zeroFrictionMaterial;
         }
@@ -117,6 +124,8 @@ public class FirstPersonController : MonoBehaviour
         {
             collider.material = advanced.highFrictionMaterial;
         }
+
+        //Debug.Log(collider.material.name);
 
         // Ground Check:
         // Create a ray that points down from the centre of the character.
