@@ -54,6 +54,12 @@
      <Compile Include="Assets\Cameras\Scripts\PivotBasedCameraRig.cs" />
      <Compile Include="Assets\Cameras\Scripts\ProtectCameraFromWallClip.cs" />
      <Compile Include="Assets\Cameras\Scripts\TargetFieldOfView.cs" />
+     <Compile Include="Assets\Imports\EasyRoads3D Free\scripts\EasyRoads3DTerrainID.cs" />
+     <Compile Include="Assets\Imports\EasyRoads3D Free\scripts\MarkerScript.cs" />
+     <Compile Include="Assets\Imports\EasyRoads3D Free\scripts\RoadObjectScript.cs" />
+     <Compile Include="Assets\Imports\EasyRoads3D Free\scripts\SurfaceScript.cs" />
+     <Compile Include="Assets\Scripts\AssignSplatMap.cs" />
+     <Compile Include="Assets\Scripts\CustomTerrainScriptAtsV2.cs" />
      <Compile Include="Assets\Systems\Controllers\First Person Player\Scripts\FirstPersonController.cs" />
      <Compile Include="Assets\Systems\Cross Platform Input\Scripts\AbstractButton.cs" />
      <Compile Include="Assets\Systems\Cross Platform Input\Scripts\AxisTouchButton.cs" />
@@ -77,8 +83,32 @@
      <Compile Include="Assets\Utility\Scripts\FollowTarget.cs" />
      <Compile Include="Assets\Utility\Scripts\MouseRotator.cs" />
      <None Include="Assets\Systems\Prototyping\Shaders\WorldCoord Diffuse.shader" />
+     <None Include="Assets\Imports\EasyRoads3D Free\Shaders\EasyRoads3D-Surface.shader" />
+     <None Include="Assets\Standard Assets\Water (Pro Only)\Water4\Sources\Shaders\FX-SimpleWater4.shader" />
+     <None Include="Assets\Imports\EasyRoads3D Free\Shaders\EasyRoads3D Marker.shader" />
+     <None Include="Assets\Shaders\TreeCreatorLeavesRendertex.shader" />
+     <None Include="Assets\Imports\EasyRoads3D Free\Shaders\EasyRoads3D-Surface alpha.shader" />
+     <None Include="Assets\Standard Assets\Water (Basic)\Sources\Shaders\FX-Water Simple.shader" />
+     <None Include="Assets\Imports\sky5X\README.txt" />
      <None Include="Assets\Systems\Cross Platform Input\Cross Platform Input Guidelines.txt" />
+     <None Include="Assets\Imports\EasyRoads3D Free\Shaders\EasyRoads3D-Normal-Diffuse.shader" />
+     <None Include="Assets\Standard Assets\Water (Pro Only)\Sources\Shaders\FX-Water.shader" />
+     <None Include="Assets\Shaders\atsV2WavingGrass.shader" />
+     <None Include="Assets\Imports\EasyRoads3D Free\_readme.txt" />
+     <None Include="Assets\Shaders\Tree.cginc" />
+     <None Include="Assets\Shaders\TerrainReplacementAtsV2.shader" />
+     <None Include="Assets\Standard Assets\Water (Pro Only)\Water4\Sources\Shaders\WaterInclude.cginc" />
      <None Include="Assets\Cameras\Camera Guidelines.txt" />
+     <None Include="Assets\Standard Assets\Water (Pro Only)\Water4\Sources\Shaders\FX-Water4.shader" />
+     <None Include="Assets\Imports\EasyRoads3D Free\Shaders\EasyRoads3D-Road-Edit-Mode.shader" />
+     <None Include="Assets\Shaders\TreeCreatorBarkRendertex.shader" />
+ <Reference Include="EasyRoads3D">
+ <HintPath>E:/Personal/GitHub/CustomCharacterController/CustomCharacterController/Assets/Imports/EasyRoads3D Free/lib/EasyRoads3D.dll</HintPath>
+ </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{A71C8402-E132-5ACC-7FAE-27DA3F0926F6}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

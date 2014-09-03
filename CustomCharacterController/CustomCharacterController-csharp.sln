@@ -1,6 +1,8 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2008
 
+Project("{E8839492-2DC1-A510-C6A8-31454C848EC4}") = "CustomCharacterController", "Assembly-CSharp-firstpass-vs.csproj", "{A71C8402-E132-5ACC-7FAE-27DA3F0926F6}"
+EndProject
 Project("{E8839492-2DC1-A510-C6A8-31454C848EC4}") = "CustomCharacterController", "Assembly-CSharp-vs.csproj", "{24A91831-F401-764D-C80A-E420692624E7}"
 EndProject
 Project("{E8839492-2DC1-A510-C6A8-31454C848EC4}") = "CustomCharacterController", "Assembly-CSharp-Editor-vs.csproj", "{283E8CF5-E2FA-2034-0AAE-BBFABF0B14BF}"
@@ -11,6 +13,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A71C8402-E132-5ACC-7FAE-27DA3F0926F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A71C8402-E132-5ACC-7FAE-27DA3F0926F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A71C8402-E132-5ACC-7FAE-27DA3F0926F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A71C8402-E132-5ACC-7FAE-27DA3F0926F6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{24A91831-F401-764D-C80A-E420692624E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{24A91831-F401-764D-C80A-E420692624E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24A91831-F401-764D-C80A-E420692624E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -23,7 +29,7 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-										GlobalSection(MonoDevelopProperties) = preSolution
+																																														GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Assembly-CSharp.csproj
 		Policies = $0
 		$0.TextStylePolicy = $1
