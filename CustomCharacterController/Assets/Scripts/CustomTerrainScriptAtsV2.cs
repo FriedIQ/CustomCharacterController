@@ -21,7 +21,7 @@ public class CustomTerrainScriptAtsV2 : MonoBehaviour {
 	
 	void Start () {
 		
-		Terrain terrainComp = (Terrain)GetComponent(typeof(Terrain));
+		var terrainComp = GetComponent<Terrain>();
 		
 		if(Bump0)
 			Shader.SetGlobalTexture("_BumpMap0", Bump0);

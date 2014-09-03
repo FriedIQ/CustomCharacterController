@@ -42,10 +42,10 @@ public class AssignSplatMap : MonoBehaviour
                 // CHANGE THE RULES BELOW TO SET THE WEIGHTS OF EACH TEXTURE ON WHATEVER RULES YOU WANT
 
                 // Texture has constant influence
-                splatWeights[0] = 0.3f;
+                splatWeights[2] = 0.3f;
 
                 // Texture is stronger at greater steepnesses
-                splatWeights[2] = Mathf.Clamp01(steepness * steepness / (terrainData.heightmapHeight / heightDampening));
+                splatWeights[1] = Mathf.Clamp01(steepness * steepness / (terrainData.heightmapHeight / heightDampening));
                 
                 // Texture is stronger at lower altitudes
                 //splatWeights[0] = Mathf.Clamp01((terrainData.heightmapHeight - height));
@@ -53,7 +53,7 @@ public class AssignSplatMap : MonoBehaviour
                 // Texture is stronger on flatter terrain
                 // Note "steepness" is unbounded, so we "normalise" it by dividing by the extent of heightmap height and scale factor
                 // Subtract result from 1.0 to give greater weighting to flat surfaces
-                splatWeights[1] = 1.0f - Mathf.Clamp01(steepness * steepness / (terrainData.heightmapHeight / heightDampening));
+                splatWeights[0] = 1.0f - Mathf.Clamp01(steepness * steepness / (terrainData.heightmapHeight / heightDampening));
 
                 // Texture[3] increases with height but only on surfaces facing positive Z axis 
                 // splatWeights[3] = height * Mathf.Clamp01(normal.z);
